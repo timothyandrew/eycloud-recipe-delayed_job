@@ -4,9 +4,13 @@ This cookbook can serve as a good starting point for setting up Delayed Job supp
 In this recipe your Delayed Job workers will be set up to run under monit. The number of workers will
 vary based on the size of the instance running Delayed Job.
 
-** Please Note ** This recipe will setup `delayed_job` on a Solo instance environment or on Utility instances in a cluster environment. 
+This recipe will setup `delayed_job` on a Solo instance environment or on named Utility instances in a cluster environment. 
+
+Name your Utility instances with prefixes: `dj`, `delayed_job`, `delayedjob`. For example, `dj1`, `delayedjob4`.
 
 If you want `delayed_job` to run on App instances instead of Utility, you will need to modify the recipe.
+
+TODO: if no corresponding dj|delayed_job|delayedjob named Utility instances, then install DJ on the app instances.
 
 ## Simple Installation
 
