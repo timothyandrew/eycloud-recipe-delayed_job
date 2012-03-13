@@ -12,6 +12,8 @@ If you want `delayed_job` to run on App instances instead of Utility, you will n
 
 TODO: if no corresponding dj|delayed_job|delayedjob named Utility instances, then install DJ on the app instances.
 
+The number of parallel workers is based on the instance type and assumes that the instance is not being used for 
+
 ## Simple Installation
 
 To add this recipe to your collection of recipes, or as your first recipe, you can use the helpful `ey-recipes` command line tool:
