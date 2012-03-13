@@ -14,6 +14,10 @@ TODO: if no corresponding dj|delayed_job|delayedjob named Utility instances, the
 
 The number of parallel workers is based on the instance type and assumes that the instance is not being used for 
 
+## Installation
+
+This recipe must be installed as `delayed_job` and not `eycloud-recipe-delayed_job`.
+
 ## Simple Installation
 
 To add this recipe to your collection of recipes, or as your first recipe, you can use the helpful `ey-recipes` command line tool:
