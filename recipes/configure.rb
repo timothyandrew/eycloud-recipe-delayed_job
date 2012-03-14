@@ -7,7 +7,7 @@
 # Name your Utility instances with prefixes: `dj`, `delayed_job`, `delayedjob`. For example, `dj1`, `delayedjob4`.
 if node[:instance_role] == "solo" || node[:instance_role] == "eylocal" || 
         (node[:instance_role] == "util" && node[:name] =~ /^(dj|delayed_job|delayedjob)/)
-  node[:applications].each do |app_name,data|
+  get_delayed_job_applications().each do |app_name,data|
   
     # determine the number of workers to run based on instance size
     if node[:instance_role] == 'solo' || node[:instance_role] == 'eylocal'
