@@ -23,5 +23,6 @@ class Chef
       else
         2
       end
+    end
   end
 end

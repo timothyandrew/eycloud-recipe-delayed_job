@@ -1,4 +1,4 @@
-# Delayed Job
+# Delayed Job recipe for EY Cloud
 
 This cookbook can serve as a good starting point for setting up Delayed Job support in your application. 
 In this recipe your Delayed Job workers will be set up to run under monit. The number of workers will
