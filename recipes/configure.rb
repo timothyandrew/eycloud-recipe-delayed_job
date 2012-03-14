@@ -5,14 +5,15 @@
 
 # This recipe will setup `delayed_job` on a Solo instance environment or on named Utility instances in a cluster environment. 
 # Name your Utility instances with prefixes: `dj`, `delayed_job`, `delayedjob`. For example, `dj1`, `delayedjob4`.
-if node[:instance_role] == "solo" || (node[:instance_role] == "util" && node[:name] !~ /^(dj|delayed_job|delayedjob)/)
+if node[:instance_role] == "solo" || node[:instance_role] == "eylocal" || 
+        (node[:instance_role] == "util" && node[:name] =~ /^(dj|delayed_job|delayedjob)/)
   node[:applications].each do |app_name,data|
   
     # determine the number of workers to run based on instance size
     if node[:instance_role] == 'solo' || node[:instance_role] == 'eylocal'
       worker_count = 1
     else
-      worker_count = get_delayed_job_worker_count
+      worker_count = get_delayed_job_worker_count(node[:ec2][:instance_type])
     end
     
     worker_count.times do |count|
