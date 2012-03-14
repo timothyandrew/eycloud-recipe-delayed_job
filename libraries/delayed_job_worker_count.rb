@@ -1,5 +1,6 @@
 class Chef
   class Recipe
+    # If you change this, please copy it back into the README as documentation
     def delayed_job_worker_count(instance_type)
       case instance_type
       when "m1.small"
