@@ -7,7 +7,7 @@
 # Name your Utility instances with prefixes: `dj`, `delayed_job`, `delayedjob`. For example, `dj1`, `delayedjob4`.
 if node[:instance_role] == "solo" || node[:instance_role] == "eylocal" || 
         (node[:instance_role] == "util" && node[:name] =~ /^(dj|delayed_job|delayedjob)/)
-  get_delayed_job_applications().each do |app_name,data|
+  delayed_job_applications().each do |app_name,data|
     
     execute "monit-reload-restart" do
       command "sleep 30 && monit reload && monit restart all -g dj_#{app_name}"
