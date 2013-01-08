@@ -54,7 +54,7 @@ To add this recipe to your collection of recipes, or as your first recipe, you c
     cd myapp
     gem install engineyard engineyard-recipes
     ey-recipes init
-    ey-recipes clone git://github.com/engineyard/eycloud-recipe-delayed_job.git -n delayed_job
+    ey-recipes clone git://github.com/timothyandrew/eycloud-recipe-delayed_job.git -n delayed_job
     ey recipes upload --apply
 
 If you want to have your recipes run during deploy (rather than the separate `ey recipes upload --apply` step):
